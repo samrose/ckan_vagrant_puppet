@@ -11,4 +11,10 @@ class devel {
 	package { git:
 		ensure => installed,
 	}
+	package { [postgresql,libpq-dev]:
+		ensure => installed,
+	}
+	package { [solr-jetty, openjdk-6-jdk]:
+		ensure => installed,
+	}
 }
