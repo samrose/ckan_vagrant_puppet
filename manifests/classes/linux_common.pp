@@ -44,6 +44,9 @@ default_transport = error:postfix configured to not route email",
 	package { 'unzip':
 		ensure => installed
 	}
+	package { 'ckan':
+		ensure => intalled
+	}
 
 	# reload ssh
 	exec {'reload ssh':
