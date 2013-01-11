@@ -51,7 +51,7 @@ cat > Vagrantfile <<EOF
 Vagrant::Config.run do |config|
   config.vm.host_name = '${vgrthostname}'
   config.vm.box = "lucid32"
-  config.vm.box_url = "lucid32 http://files.vagrantup.com/lucid32.box"
+  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
   config.vm.provision :shell, :inline => "/usr/bin/apt-get install -y puppet libaugeas-ruby augeas-tools rubygems"
   config.vm.provision :shell, :inline => "/usr/bin/apt-get update /usr/bin/apt-get install -y wget echo 'deb http://apt.ckan.org/ckan-1.MAJOR_VERSION lucid universe' | sudo tee /etc/apt/sources.list.d/ckan.list wget -qO- 'http://apt.ckan.org/packages_public.key' | /usr/bin/apt-key add - /usr/bin/apt-get update"	
   config.vm.provision :puppet, :module_path => "modules", :options => "--verbose" do |puppet|
